@@ -31,4 +31,11 @@ M.shade = {
    },
 }
 
+M.telescope = {
+   n = {
+      -- find
+      [";"] = { "<cmd> Telescope buffers <CR>", "﬘ find buffers" },
+   },
+}
+
 return M

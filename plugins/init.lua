@@ -1,58 +1,82 @@
 return {
 
-   ["windwp/nvim-ts-autotag"] = {
-      ft = { "html", "javascriptreact" },
-      after = "nvim-treesitter",
-      config = function()
-         local present, autotag = pcall(require, "nvim-ts-autotag")
+  ["windwp/nvim-ts-autotag"] = {
+    ft = { "html", "javascriptreact" },
+    after = "nvim-treesitter",
+    config = function()
+      local present, autotag = pcall(require, "nvim-ts-autotag")
 
-         if present then
-            autotag.setup()
-         end
-      end,
-   },
+      if present then
+        autotag.setup()
+      end
+    end,
+  },
 
-   ["jose-elias-alvarez/null-ls.nvim"] = {
-      after = "nvim-lspconfig",
-      config = function()
-         require "custom.plugins.null-ls"
-      end,
-   },
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require "custom.plugins.null-ls"
+    end,
+  },
 
-   ["Pocco81/TrueZen.nvim"] = {
-      cmd = {
-         "TZAtaraxis",
-         "TZMinimalist",
-         "TZFocus",
-      },
-      config = function()
-         require "custom.plugins.truezen"
-      end,
-   },
+  ["Pocco81/TrueZen.nvim"] = {
+    cmd = {
+      "TZAtaraxis",
+      "TZMinimalist",
+      "TZFocus",
+    },
+    config = function()
+      require "custom.plugins.truezen"
+    end,
+  },
 
-   ["nvim-neorg/neorg"] = {
-      ft = "norg",
-      after = "nvim-treesitter",
-      config = function()
-         require "custom.plugins.neorg"
-      end,
-   },
+  ["nvim-neorg/neorg"] = {
+    ft = "norg",
+    after = "nvim-treesitter",
+    config = function()
+      require "custom.plugins.neorg"
+    end,
+  },
 
-   ["nvim-treesitter/playground"] = {
-      cmd = "TSCaptureUnderCursor",
-      config = function()
-         require("nvim-treesitter.configs").setup()
-      end,
-   },
+  ["nvim-treesitter/playground"] = {
+    cmd = "TSCaptureUnderCursor",
+    config = function()
+      require("nvim-treesitter.configs").setup()
+    end,
+  },
 
-   ["andreadev-it/shade.nvim"] = {
-      module = "shade",
-      config = function()
-         require("shade").setup {
-            overlay_opacity = 50,
-            opacity_step = 1,
-            exclude_filetypes = { "NvimTree" },
-         }
-      end,
-   },
-}
+  ["andreadev-it/shade.nvim"] = {
+    module = "shade",
+    config = function()
+      require("shade").setup {
+        overlay_opacity = 50,
+        opacity_step = 1,
+        exclude_filetypes = { "NvimTree" },
+      }
+    end,
+  },
+
+  ["airblade/vim-gitgutter"] = {},
+
+  ["tpope/vim-fugitive"] = {},
+
+  ["ray-x/go.nvim"] = {},
+
+  ["goolord/alpha-nvim"] = {
+    config = function()
+      require "plugins.configs.alpha"
+    end,
+  },
+
+  ["fatih/vim-go"] = {
+    config = function ()
+      require "custom.plugins.vim-go"
+    end
+  },
+
+  ["airblade/vim-rooter"] = {
+    config = function ()
+      require "custom.plugins.rooter"
+    end
+  },
+ }

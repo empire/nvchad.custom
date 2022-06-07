@@ -23,7 +23,7 @@ M.plugins = {
    user = require "custom.plugins",
 
    remove = {
-      "folke/which-key.nvim",
+     "goolord/alpha-nvim",
    },
 }
 
