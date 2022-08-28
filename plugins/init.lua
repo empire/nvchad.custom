@@ -47,11 +47,14 @@ return {
 
   ["andreadev-it/shade.nvim"] = {
     module = "shade",
+    setup = function()
+      require("core.lazy_load").on_file_open "shade.nvim"
+    end,
     config = function()
       require("shade").setup {
         overlay_opacity = 50,
         opacity_step = 1,
-        exclude_filetypes = { "NvimTree" },
+        exclude_filetypes = {},
       }
     end,
   },
@@ -60,23 +63,54 @@ return {
 
   ["tpope/vim-fugitive"] = {},
 
-  ["ray-x/go.nvim"] = {},
+  -- ["ray-x/go.nvim"] = {},
 
   ["goolord/alpha-nvim"] = {
+    disable = false,
     config = function()
-      require "plugins.configs.alpha"
+      -- TODO customize the dashboard
+      require("alpha").setup(require("alpha.themes.startify").config)
     end,
   },
 
+  -- ["ThePrimeagen/refactoring.nvim"] = {
+  --     after = "base46",
+  --     requires = {
+  --       {"nvim-lua/plenary.nvim"},
+  --       {"nvim-treesitter/nvim-treesitter"}
+  --   },
+  --   config = function()
+  --     require("refactoring").setup({})
+  --   end,
+  -- },
+
   ["fatih/vim-go"] = {
-    config = function ()
+    config = function()
       require "custom.plugins.vim-go"
-    end
+    end,
+  },
+
+  -- TODO how can I use this plugin
+  -- ["williamboman/mason-lspconfig.nvim"] = {
+  --   after = { "nvim-lspconfig", "mason.nvim" },
+  --   config = function ()
+  --     -- require("mason-lspconfig").setup({
+  --     --   ensure_installed = { "sumneko_lua", "gopls" }
+  --     -- })
+  --     require("lspconfig").pyright.setup {}
+  --   end
+  -- },
+
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
+    end,
   },
 
   ["airblade/vim-rooter"] = {
-    config = function ()
+    config = function()
       require "custom.plugins.rooter"
-    end
+    end,
   },
- }
+}

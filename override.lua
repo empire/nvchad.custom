@@ -3,50 +3,82 @@
 local M = {}
 
 M.treesitter = {
-   ensure_installed = {
-      "vim",
-      "html",
-      "css",
-      "javascript",
-      "json",
-      "toml",
-      "markdown",
-      "c",
-      "bash",
-      "lua",
-      "norg",
-   },
+  ensure_installed = {
+    "bash",
+    "c",
+    "css",
+    "go",
+    "gomod",
+    "gowork",
+    "html",
+    "javascript",
+    "json",
+    "json",
+    "lua",
+    "markdown",
+    "norg",
+    "python",
+    "toml",
+    "vim",
+  },
 }
 
 M.nvimtree = {
-   git = {
-      enable = true,
-   },
+  git = {
+    enable = true,
+  },
 
-   renderer = {
-      highlight_git = true,
-      icons = {
-         show = {
-            git = true,
-         },
+  renderer = {
+    highlight_git = true,
+    icons = {
+      show = {
+        git = true,
       },
-   },
+    },
+  },
 }
 
 M.blankline = {
-   filetype_exclude = {
-      "help",
-      "terminal",
-      "alpha",
-      "packer",
-      "lspinfo",
-      "TelescopePrompt",
-      "TelescopeResults",
-      "nvchad_cheatsheet",
-      "lsp-installer",
-      "norg",
-      "",
-   },
+  filetype_exclude = {
+    "TelescopePrompt",
+    "TelescopeResults",
+    "alpha",
+    "help",
+    "lsp-installer",
+    "lspinfo",
+    "norg",
+    "nvchad_cheatsheet",
+    "packer",
+    "terminal",
+    "",
+  },
+}
+
+M.mason = {
+  ensure_installed = {
+    "bash-language-server",
+    "clangd",
+    "pyright",
+    "phpactor",
+
+    -- lua
+    "lua-language-server",
+    "stylua",
+
+    -- go
+    "gopls",
+    "gofumpt",
+    "goimports",
+    "delve",
+    "go-debug-adapter",
+    "golangci-lint",
+
+    -- jq
+    "jq",
+
+    -- yaml
+    "yamllint",
+  },
 }
 
 return M

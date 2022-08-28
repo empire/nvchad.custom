@@ -4,11 +4,8 @@ local override = require "custom.override"
 
 M.plugins = {
 
+  -- These option is removed
    options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
-      },
-
       statusline = {
          separator_style = "round",
       },
@@ -18,12 +15,13 @@ M.plugins = {
       ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
       ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
       ["lukas-reineke/indent-blankline.nvim"] = override.blankline,
+      ["williamboman/mason.nvim"] = override.mason,
    },
 
    user = require "custom.plugins",
 
    remove = {
-     "goolord/alpha-nvim",
+     --     "goolord/alpha-nvim",
    },
 }
 
