@@ -1,4 +1,21 @@
+local override = require "custom.override"
+
 return {
+  ["lukas-reineke/indent-blankline.nvim"] = {
+    override_options = override.blankline,
+  },
+
+  ["williamboman/mason.nvim"] = {
+    override_options = override.mason,
+  },
+
+  ["nvim-treesitter/nvim-treesitter"] = {
+    override_options = override.treesitter,
+  },
+
+  ["kyazdani42/nvim-tree.lua"] = {
+    override_options = override.nvimtree,
+  },
 
   ["windwp/nvim-ts-autotag"] = {
     ft = { "html", "javascriptreact" },
