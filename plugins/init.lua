@@ -50,6 +50,7 @@ return {
   ["nvim-neorg/neorg"] = {
     ft = "norg",
     after = "nvim-treesitter",
+    run = ":Neorg sync-parsers",
     config = function()
       require "custom.plugins.neorg"
     end,
@@ -63,6 +64,7 @@ return {
   },
 
   ["andreadev-it/shade.nvim"] = {
+    disable = true,
     module = "shade",
     setup = function()
       require("core.lazy_load").on_file_open "shade.nvim"
