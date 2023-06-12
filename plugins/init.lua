@@ -13,9 +13,9 @@ return {
     override_options = override.treesitter,
   },
 
-  ["kyazdani42/nvim-tree.lua"] = {
-    override_options = override.nvimtree,
-  },
+  -- ["kyazdani42/nvim-tree.lua"] = {
+  --   override_options = override.nvimtree,
+  -- },
 
   ["windwp/nvim-ts-autotag"] = {
     ft = { "html", "javascriptreact" },
@@ -47,14 +47,14 @@ return {
     end,
   },
 
-  ["nvim-neorg/neorg"] = {
-    ft = "norg",
-    after = "nvim-treesitter",
-    run = ":Neorg sync-parsers",
-    config = function()
-      require "custom.plugins.neorg"
-    end,
-  },
+  -- ["nvim-neorg/neorg"] = {
+  --   ft = "norg",
+  --   after = "nvim-treesitter",
+  --   run = ":Neorg sync-parsers",
+  --   config = function()
+  --     require "custom.plugins.neorg"
+  --   end,
+  -- },
 
   ["nvim-treesitter/playground"] = {
     cmd = "TSCaptureUnderCursor",
